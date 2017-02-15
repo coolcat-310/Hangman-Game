@@ -20,23 +20,19 @@ function randomWord() {
     return wordList[Math.floor(Math.random() * wordList.length)];
 }
 
-function displayCipher() {
-    var word = randomWord();
-    var num = word.length;
-    document.getElementById('guess-left').innerHTML= word;
-    // console.log(word);
-    // console.log(num);
-}
 
 function start() {
+    /*
+    Start function resets all variables and creates an string of underscores
+
+     */
     wrongGuess = [];
+    document.getElementById('wrong-guess').innerHTML = "";
     numGuess = 9;
     blankAndSuccess = [];
     chossenWord = randomWord();
     letterInChosenWord = chossenWord.split("");
     numBlanks = letterInChosenWord.length;
-    console.log(chossenWord);
-    console.log(numBlanks);
 
     //fill array with underscores
     for(var i = 0; i< chossenWord.length;i++){
@@ -44,54 +40,71 @@ function start() {
     }
     console.log(blankAndSuccess);
     document.getElementById('word-blank').innerHTML = blankAndSuccess.join(" ");
-    document.getElementById('guess-left').innerHTML = numGuess;
+    document.getElementById('guess-left').innerHTML = String(numGuess);
 
 }
 
 function checkLetter(letter){
+    /*
+    function checks the argument letter with the choosenword if letter is present then the char will be
+    revealed in the array. Otherwise the numGuess will decrease by one.
+     */
 
     var letterInWord = false;
-    for(i = 0; i < numBlanks; i++){
+    for(var i = 0; i < numBlanks; i++){
         if(chossenWord[i] === letter){
             letterInWord = true;
         }
     }
     if(letterInWord){
-        for(i = 0; i < numBlanks; i++){
+        for( i = 0; i < numBlanks; i++){
             if(chossenWord[i] === letter){
                 blankAndSuccess[i] = letter;
             }
         }
-    }else {
-        numGuess--;
-        wrongGuess.push(letter);
+    }
+    else {
+
+        if(wrongGuess.length == 0) {
+            wrongGuess.push(letter);
+            numGuess--;
+        }else if(wrongGuess.indexOf(letter) < 0){
+            wrongGuess.push(letter);
+            numGuess--;
+        }
+        else{
+            alert(letter + ' has been used.')
+        }
     }
 }
 
 function roundComplete(){
-    //Update Elements in HTML
-    document.getElementById('word-blank').innerHTML = blankAndSuccess.join('');
+    /*
+    function roundComplete verifies the game is over by either win or loss
+     */
+    document.getElementById('word-blank').innerHTML = blankAndSuccess.join(' ');
     document.getElementById('guess-left').innerHTML = numGuess;
-    document.getElementById('wrong-guess').innerHTML = wrongGuess.join('');
+    document.getElementById('wrong-guess').innerHTML = wrongGuess.join(' ');
 
     if(letterInChosenWord.join(' ') === blankAndSuccess.join(' ')){
         winCounter++;
         document.getElementById('win-counter').innerHTML = winCounter;
-        alert('You win')
+        alert('You win the word is ' + letterInChosenWord.join(''));
         start();
+
     }
     else if(numGuess == 0){
         lossCounter++;
-        document.getElementById('loss-counter').innerHTML = lossCounter;
+        document.getElementById('loss-counter').innerHTML = String( lossCounter);
         alert('You lose');
-        start()
+        start();
     }
 }
+
 
 start();
 document.onkeyup = function (event) {
     var guessLetter = String.fromCharCode(event.keyCode).toLowerCase();
-    console.log("this is the letter you typed: " + guessLetter);
     checkLetter(guessLetter);
     roundComplete()
-}
+};

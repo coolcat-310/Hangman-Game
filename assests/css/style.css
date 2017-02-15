@@ -1,0 +1,15 @@
+body{
+    font-size: large;
+}
+
+#wrong-guess{
+    color: red;
+}
+
+#win-counter{
+    color: green;
+}
+
+#loss-counter{
+    color: red;
+}
