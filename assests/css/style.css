@@ -4,13 +4,13 @@ body{
 .col-md-7{
     border: solid 1px gainsboro;
     margin-right: 5%;
-    border-radius: 25px;
+    border-radius: 26px;
 }
 
 .col-md-4{
     padding-top: 1%;
     border: solid 1px gainsboro;
-    border-radius: 25px;
+    border-radius: 26px;
 }
 
 
