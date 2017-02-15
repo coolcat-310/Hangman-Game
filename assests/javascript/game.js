@@ -41,6 +41,8 @@ function start() {
     console.log(blankAndSuccess);
     document.getElementById('word-blank').innerHTML = blankAndSuccess.join(" ");
     document.getElementById('guess-left').innerHTML = String(numGuess);
+    document.getElementById('win-counter').innerHTML = String(winCounter);
+    document.getElementById('loss-counter').innerHTML = String(lossCounter);
 
 }
 

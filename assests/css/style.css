@@ -1,6 +1,16 @@
 body{
     font-size: large;
 }
+.col-md-7{
+    border: solid 1px gainsboro;
+    margin-right: 5%;
+}
+
+.col-md-4{
+    padding-top: 1%;
+    border: solid 1px gainsboro;
+}
+
 
 #wrong-guess{
     color: red;
@@ -8,6 +18,9 @@ body{
 
 #win-counter{
     color: green;
+}
+#textWin{
+    letter-spacing: .7px;
 }
 
 #loss-counter{
