@@ -98,7 +98,7 @@ function roundComplete(){
     else if(numGuess == 0){
         lossCounter++;
         document.getElementById('loss-counter').innerHTML = String(lossCounter);
-        alert('You lose, the word was: '+ chossenWord);
+        alert('You lose, the word was:  '+ chossenWord);
         start();
     }
 }
