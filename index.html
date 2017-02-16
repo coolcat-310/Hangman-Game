@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>Hangman | Juan Navarrete</title>
     <!-- Latest compiled and minified CSS -->
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="shortcut icon" type="image/png"
+          href="data:image/png;base64,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"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="assests/css/style.css">
 </head>
 <body>
-<div class="jumbotron">
+<div class="jumbotron ">
     <div class="container">
-        <div class="jumbotron">
+        <div class="main">
             <h1>Hangman Game</h1>
             <p>Start guessing by pressing down at any letter key.</p>
-
         </div>
     </div>
 </div>
@@ -29,6 +31,9 @@
                 <p>Loss Count : <span id="loss-counter"></span> </p>
             </div>
         </div>
+        <!--<div class="row">-->
+            <!--<div class="alert alert-warning" id="wrong" role="alert"></div>-->
+        <!--</div>-->
     </div>
     <script type="text/javascript" src="assests/javascript/game.js" ></script>
 </body>

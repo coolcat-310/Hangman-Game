@@ -66,7 +66,6 @@ function checkLetter(letter){
         }
     }
     else {
-
         if(wrongGuess.length == 0) {
             wrongGuess.push(letter);
             numGuess--;
@@ -76,6 +75,7 @@ function checkLetter(letter){
         }
         else{
             alert(letter + ' has been used.')
+            document.getElementById('wrong').innerHTML = String(letter + ' has been used.');
         }
     }
 }
@@ -97,8 +97,8 @@ function roundComplete(){
     }
     else if(numGuess == 0){
         lossCounter++;
-        document.getElementById('loss-counter').innerHTML = String( lossCounter);
-        alert('You lose');
+        document.getElementById('loss-counter').innerHTML = String(lossCounter);
+        alert('You lose, the word was: '+ chossenWord);
         start();
     }
 }

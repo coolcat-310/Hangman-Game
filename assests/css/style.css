@@ -1,6 +1,7 @@
 body{
     font-size: large;
 }
+
 .col-md-7{
     border: solid 1px gainsboro;
     margin-right: 5%;
@@ -13,6 +14,16 @@ body{
     border-radius: 26px;
 }
 
+.main-text{
+    color: powderblue;
+}
+
+/*.mega{*/
+    /*background-image: url('../images/concrete.jpg');*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100% 100%;*/
+
+/*}*/
 
 #wrong-guess{
     color: red;
